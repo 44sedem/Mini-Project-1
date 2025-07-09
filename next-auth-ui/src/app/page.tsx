@@ -59,6 +59,7 @@ export default function StudentsPage() {
         <table className="w-full border-collapse shadow-md rounded-lg overflow-hidden">
           <thead>
             <tr className="bg-blue-200 text-left">
+               <th className="p-4">ID</th>
               <th className="p-4">Name</th>
               <th className="p-4">Email</th>
             </tr>
@@ -66,9 +67,10 @@ export default function StudentsPage() {
           <tbody>
             {students.map((s, i) => (
               <tr
-                key={i}
+                key={s.id ?? i}
                 className="even:bg-white odd:bg-gray-50 hover:bg-blue-50 transition-colors duration-200"
               >
+                <td className="p-4">{s.id}</td>
                 <td className="p-4">{s.name}</td>
                 <td className="p-4">{s.email}</td>
               </tr>
